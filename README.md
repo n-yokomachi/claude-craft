@@ -1,70 +1,70 @@
 # claude-harness
 
-Claude Code のカスタムスキル・設定ファイル一式を管理し、シンボリックリンクで `~/.claude/` へデプロイするハーネスプロジェクトです。
+A harness project that manages custom skills and configuration files for Claude Code, deploying them to `~/.claude/` via symlinks.
 
-## セットアップ
+## Setup
 
 ```bash
-# このリポジトリを clone
+# Clone this repository
 git clone <repo-url>
 cd claude-harness
 
-# Claude Code 上でインストーラを実行
+# Run the installer in Claude Code
 /harness-init
 
-# ターミナル環境のセットアップ（Ghostty + tmux + yazi + lazygit）
+# Set up terminal environment (Ghostty + tmux + yazi + lazygit)
 /terminal-init
 ```
 
-## プロジェクト構造
+## Project Structure
 
 ```
 claude-harness/
-├── dotfiles/                   # ~/.claude/ に配置するファイル群
-│   ├── CLAUDE.md               #   グローバル指示ファイル
-│   ├── settings.json           #   Claude Code 設定
-│   ├── statusline-command.sh   #   ステータスライン（TokyoNight テーマ）
-│   ├── ghostty/config          #   Ghostty ターミナル設定
-│   ├── tmux.conf               #   tmux 設定
-│   ├── yazi/yazi.toml          #   yazi ファイルマネージャ設定
-│   └── lazygit/config.yml      #   lazygit 設定
-├── skills/                     # ~/.claude/skills/ に配置するスキル群
-│   ├── briefing/               #   朝のブリーフィング（予定・メール・天気）
-│   ├── calendar/               #   カレンダー確認
-│   └── email-check/            #   メールチェック
+├── dotfiles/                   # Files deployed to ~/.claude/
+│   ├── CLAUDE.md               #   Global instruction file
+│   ├── settings.json           #   Claude Code settings
+│   ├── statusline-command.sh   #   Status line script (TokyoNight theme)
+│   ├── ghostty/config          #   Ghostty terminal config
+│   ├── tmux.conf               #   tmux config
+│   ├── yazi/yazi.toml          #   yazi file manager config
+│   └── lazygit/config.yml      #   lazygit config
+├── skills/                     # Skills deployed to ~/.claude/skills/
+│   ├── briefing/               #   Morning briefing (calendar, email, weather)
+│   ├── calendar/               #   Google Calendar check
+│   └── email-check/            #   Gmail inbox check
 ├── .claude/skills/
-│   ├── harness-init/           #   Claude Code 設定デプロイ（プロジェクトレベル）
-│   └── terminal-init/          #   ターミナル環境構築（プロジェクトレベル）
-└── CLAUDE.md                   # プロジェクト固有の指示
+│   ├── harness-init/           #   Claude Code config deployer (project-level)
+│   └── terminal-init/          #   Terminal environment setup (project-level)
+└── CLAUDE.md                   # Project-specific instructions
 ```
 
-## スキル一覧
+## Skills
 
-| スキル | 説明 |
-|--------|------|
-| `/harness-init` | Claude Code 設定を `~/.claude/` にデプロイ |
-| `/terminal-init` | Ghostty + tmux + yazi + lazygit のインストールと設定 |
-| `/briefing` | 今日の予定・メール・天気をまとめて報告 |
-| `/calendar` | Google Calendar の予定を確認 |
-| `/email-check` | Gmail の受信トレイを確認 |
+| Skill | Description |
+|-------|-------------|
+| `/harness-init` | Deploy Claude Code config to `~/.claude/` |
+| `/terminal-init` | Install and configure Ghostty + tmux + yazi + lazygit |
+| `/briefing` | Morning summary of calendar, email, and weather |
+| `/calendar` | Check Google Calendar events |
+| `/email-check` | Check Gmail inbox |
 
-## 外部連携
+## Integrations
 
-| サービス | 方式 |
-|----------|------|
-| Gmail | クラウド MCP（Anthropic 提供） |
-| Google Calendar | クラウド MCP（Anthropic 提供） |
-| Slack | クラウド MCP（Anthropic Slack Connector） |
+| Service | Method |
+|---------|--------|
+| Gmail | Cloud MCP (Anthropic) |
+| Google Calendar | Cloud MCP (Anthropic) |
+| Slack | Cloud MCP (Anthropic Slack Connector) |
 
-## 開発フロー
+## Development Workflow
 
-1. `skills/` や `dotfiles/` のファイルを編集
-2. `/harness-init` で Claude Code 設定を `~/.claude/` に反映
-3. `/terminal-init` でターミナル環境をセットアップ
-4. 別プロジェクトで動作確認
+1. Edit files in `skills/` or `dotfiles/`
+2. Run `/harness-init` to deploy Claude Code config to `~/.claude/`
+3. Run `/terminal-init` to set up terminal environment
+4. Test in another project
 
-設定ファイルはシンボリックリンクで配置されるため、リポジトリを `git pull` するだけで全環境に反映されます。
+All config files are deployed as symlinks, so a `git pull` updates all environments instantly.
 
-## シークレット管理
+## Secret Management
 
-`settings.json` にシークレットは含めません。API キー等はシェルプロファイル（`~/.zshrc` など）で `export` してください。
+Never put secrets in `settings.json`. Export API keys via shell profile (`~/.zshrc`, etc.).
