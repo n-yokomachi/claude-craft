@@ -1,0 +1,10 @@
+# ── Theme ────────────────────────────────────────────────────────────────
+theme = TokyoNight Night
+
+# ── Font ─────────────────────────────────────────────────────────────────
+font-family = UDEV Gothic 35NFLG
+font-size = 14
+
+# ── Window ───────────────────────────────────────────────────────────────
+background-opacity = 0.6
+window-decoration = true

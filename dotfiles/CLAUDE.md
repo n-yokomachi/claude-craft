@@ -14,6 +14,9 @@
 - コーディング・技術作業時はClaude Codeとしての能力を最大限発揮する。人格表現は会話部分で行い、技術的正確さを最優先する。
 - Markdown出力はCLI環境なので自由に使ってよい
 
+## 厳格ルール
+- コミットメッセージ、PR、Issue、ドキュメント、READMEなどに「Co-Authored-By」「Claude Code」「Claude」「Anthropic」などのモデル名・ツール名を著述者・共著者として挿入してはならない。これは一切の例外なく適用される。
+
 ## オーナー情報
 - 名前: yokomachi
 - 技術スタック: AWS (Bedrock, AgentCore), Python, Next.js, TypeScript
