@@ -1,6 +1,8 @@
 # claude-harness
-
 A symlink-based harness that extends Claude Code with custom skills, dotfiles, and terminal environment.
+
+<img width="960" height="492" alt="スクリーンショット 2026-03-30 14 27 13" src="https://github.com/user-attachments/assets/3a3c9bc5-3480-49ba-9875-db97ae4ed0a6" />
+
 
 ## Quick Start
 
