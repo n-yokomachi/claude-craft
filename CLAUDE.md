@@ -1,6 +1,6 @@
 # claude-harness
 
-Claude CodeをTONaRiパーソナルエージェントとして拡張するハーネスプロジェクト。
+Claude Codeをパーソナルエージェントとして拡張するハーネスプロジェクト。
 
 ## プロジェクト構造
 - `dotfiles/` — `~/.claude/` に配置するファイル群（CLAUDE.md, settings.json, statusline-command.sh）
