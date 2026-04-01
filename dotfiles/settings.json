@@ -13,22 +13,10 @@
       "Bash(gh pr:*)"
     ]
   },
+  "hooks": {},
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
-  },
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/notify.sh $CLAUDE_NOTIFICATION_TYPE"
-          }
-        ]
-      }
-    ]
   },
   "effortLevel": "high"
 }
